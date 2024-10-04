@@ -26,9 +26,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-
       - name: Check out code
         uses: actions/checkout@v4
 
@@ -36,6 +33,9 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '1.23.0'
+
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: Run `go fmt`
         run: test -z "$(go fmt ./... 2>&1)"
