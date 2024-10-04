@@ -40,8 +40,5 @@ jobs:
       - name: Run `go fmt`
         run: test -z "$(go fmt ./... 2>&1)"
 
-      - name: Run `staticcheck -debug.version`
-        run: staticcheck -debug.version
-
       - name: Run `staticcheck`
         run: staticcheck ./...
