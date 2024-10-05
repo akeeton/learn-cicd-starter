@@ -22,9 +22,9 @@ func TestGetAPIKey(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name:    "Good header",
-			args:    args{headers: http.Header{
-				"Authorization": []string{ "ApiKey ASDF" },
+			name: "Good header",
+			args: args{headers: http.Header{
+				"Authorization": []string{"ApiKey ASDF"},
 			}},
 			want:    "ASDF",
 			wantErr: false,
